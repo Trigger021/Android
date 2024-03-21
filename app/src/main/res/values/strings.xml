@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ChegeApp</string>
+    <string name="title_activity_layout">LayoutActivity</string>
+    <string name="title_activity_intents">IntentsActivity</string>
+</resources>
