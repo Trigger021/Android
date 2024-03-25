@@ -147,7 +147,7 @@ fun Layout(){
         }
         //End of Third row
         Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center){
-            Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(Color.Blue)) {
+            Button(onClick = { mcontext.startActivity(Intent(mcontext,IntentsActivity::class.java)) }, colors = ButtonDefaults.buttonColors(Color.Blue)) {
                 Text(text = "NEXT")
             }
         }
