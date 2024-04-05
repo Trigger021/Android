@@ -1,5 +1,6 @@
 package com.example.chegeapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -19,6 +20,8 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Phone
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -61,7 +64,7 @@ fun MyForm(){
         modifier = Modifier
             .fillMaxSize()
             .paint(
-                painterResource(id = R.drawable.backgrounds),
+                painterResource(id = R.drawable.background1),
                 contentScale = ContentScale.FillBounds
             )
     )
@@ -149,6 +152,11 @@ fun MyForm(){
                 .padding(start = 20.dp, end = 20.dp),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
+        Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center){
+            Button(onClick = { }, colors = ButtonDefaults.buttonColors(Color.Blue)) {
+                Text(text = "REGISTER")
+            }
+        }
 
     }
 }

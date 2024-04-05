@@ -8,6 +8,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,8 +16,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Divider
@@ -24,6 +28,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -38,6 +43,10 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.animateLottieCompositionAsState
+import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.chegeapp.ui.theme.ChegeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -52,7 +61,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Demo(){
     Column (
-        modifier = Modifier.fillMaxHeight(),
+        modifier = Modifier
+            .fillMaxHeight()
+            .verticalScroll(rememberScrollState())
         )
     { val mContext = LocalContext.current
         Text(
@@ -64,8 +75,21 @@ fun Demo(){
             textDecoration = TextDecoration.Underline
             )
         Text(text = "ERR_CONNECTION_TIMED_OUT")
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(10.dp))
+        Box(
+            modifier = Modifier.fillMaxWidth(),
+            contentAlignment = Alignment.Center,
+        ){
+            //Lottie Animation
+            val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.welcome))
+            val progress by animateLottieCompositionAsState(composition)
+            LottieAnimation(composition, progress,
+                modifier = Modifier.size(300.dp)
+            )
+            //End of lottie animation
 
+        }
+        Spacer(modifier = Modifier.height(10.dp))
         Text(
             text = "Types of cars",
             fontSize = 20.sp,
@@ -83,7 +107,7 @@ fun Demo(){
         Text(text = "4.Mazda")
         Text(text = "5.Toyota")
         Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center){
-            Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(Color.Blue)) {
+            Button(onClick = { mContext.startActivity(Intent(mContext , ExploreActivity::class.java)) }, colors = ButtonDefaults.buttonColors(Color.Blue)) {
                 Text(text = "See more cars")
             }
         }
@@ -108,14 +132,15 @@ fun Demo(){
             horizontalAlignment = Alignment.CenterHorizontally
             )
         {
-            Button(onClick = { /*TODO*/ },
+            Button(onClick = {
+                             mContext.startActivity(Intent(mContext, DestinationActivity::class.java))
+            },
                 shape = RoundedCornerShape(7.dp),
                 colors = ButtonDefaults.buttonColors(Color.Blue)
                 ) {
-                Text(text = "see more categories")
+                Text(text = "Destinations")
             }
         }
-
         Spacer(modifier = Modifier.height(10.dp))
         Divider()
         Spacer(modifier = Modifier.height(10.dp))
@@ -149,6 +174,25 @@ fun Demo(){
                 .padding(start = 50.dp, end = 50.dp)
             ) {
             Text(text = "Continue")
+        }
+        Row {
+            Button(onClick = {
+                mContext.startActivity(Intent(mContext, LottieActivity::class.java))
+            },
+                shape = RoundedCornerShape(7.dp),
+                colors = ButtonDefaults.buttonColors(Color.Blue)
+            ) {
+                Text(text = "Lottie")
+            }
+            Spacer(modifier = Modifier.width(5.dp))
+            Button(onClick = {
+                mContext.startActivity(Intent(mContext, DawgActivity::class.java))
+            },
+                shape = RoundedCornerShape(7.dp),
+                colors = ButtonDefaults.buttonColors(Color.Blue)
+            ) {
+                Text(text = "Dawg")
+            }
         }
     }
 }
