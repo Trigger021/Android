@@ -99,6 +99,7 @@ fun MyIntents(){
                 }
                 IconButton(onClick = { /*TODO*/ })
                 {
+                    Text(text = "ahsda")
                     Icon(imageVector = Icons.Default.Favorite,
                         contentDescription = "Favourite",
                         tint = Color.White
@@ -224,7 +225,7 @@ fun MyIntents(){
             modifier = Modifier
                 .fillMaxWidth()
                 .clickable {
-                    mContext.startActivity(Intent(mContext,formactivity::class.java))
+                    mContext.startActivity(Intent(mContext, formactivity::class.java))
                 },
             textAlign = TextAlign.Center,
             fontWeight = FontWeight.Bold,

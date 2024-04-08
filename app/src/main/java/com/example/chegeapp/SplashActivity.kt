@@ -50,7 +50,7 @@ class SplashActivity : ComponentActivity() {
             val coroutine = rememberCoroutineScope()
             coroutine.launch {
                 delay(3000)
-                mContext.startActivity(Intent(mContext,MainActivity::class.java))
+                mContext.startActivity(Intent(mContext,FirstActivity::class.java))
                 finish()
             }
         }

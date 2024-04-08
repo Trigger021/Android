@@ -48,6 +48,7 @@ import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.chegeapp.ui.theme.ChegeAppTheme
+import com.example.chegeapp.ui.theme.purple
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -168,7 +169,7 @@ fun Demo(){
                          mContext.startActivity(Intent(mContext,LayoutActivity::class.java))
         },
             shape = RoundedCornerShape(5.dp),
-            colors = ButtonDefaults.buttonColors(Color.Blue),
+            colors = ButtonDefaults.buttonColors(purple),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 50.dp, end = 50.dp)

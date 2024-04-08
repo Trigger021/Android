@@ -8,4 +8,10 @@
     <string name="title_activity_dawg">DawgActivity</string>
     <string name="title_activity_lottie">LottieActivity</string>
     <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_first_acticity">FirstActicity</string>
+    <string name="title_activity_first">FirstActivity</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="title_activity_third">ThirdActivity</string>
+    <string name="title_activity_furniture">FurnitureActivity</string>
+    <string name="title_activity_main2">MainActivity2</string>
 </resources>
