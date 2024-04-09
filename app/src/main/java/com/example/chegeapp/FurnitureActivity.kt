@@ -109,14 +109,14 @@ fun Furniture(){
         ) {
             Text(
                 text = "Chairs",
-                fontSize = 30.sp,
+                fontSize = 35.sp,
                 fontWeight = FontWeight.Bold,
                 fontStyle = FontStyle.Normal,
             )
             Spacer(modifier = Modifier.width(10.dp))
             Text(
                 text = "Tables",
-                fontSize = 25.sp,
+                fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
                 fontStyle = FontStyle.Normal,
                 color = Color.Gray,
@@ -125,7 +125,7 @@ fun Furniture(){
             Spacer(modifier = Modifier.width(10.dp))
             Text(
                 text = "Sofa",
-                fontSize = 25.sp,
+                fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
                 fontStyle = FontStyle.Normal,
                 color = Color.Gray,
@@ -134,7 +134,7 @@ fun Furniture(){
             Spacer(modifier = Modifier.width(10.dp))
             Text(
                 text = "Beddings",
-                fontSize = 25.sp,
+                fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
                 fontStyle = FontStyle.Normal,
                 color = Color.Gray,
@@ -143,7 +143,7 @@ fun Furniture(){
             Spacer(modifier = Modifier.width(10.dp))
             Text(
                 text = "Utensils",
-                fontSize = 25.sp,
+                fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
                 fontStyle = FontStyle.Normal,
                 color = Color.Gray,
@@ -162,11 +162,12 @@ fun Furniture(){
                 fontFamily = FontFamily.Default,
                 color = Color.Black
                 )
-            Spacer(modifier = Modifier.width(205.dp))
             Text(
                 text = "Popular",
                 fontWeight = FontWeight.Bold,
-                fontSize = 20.sp
+                fontSize = 20.sp,
+                textAlign = TextAlign.End,
+                modifier = Modifier.fillMaxWidth()
                 )
                 Icon(imageVector = Icons.Default.KeyboardArrowDown,
                     contentDescription = "Favourite",
@@ -178,7 +179,7 @@ fun Furniture(){
         Column (
             modifier = Modifier
                 .verticalScroll(rememberScrollState())
-                .padding(10.dp)
+                .padding(20.dp)
         ){
             //First row
             Row {
