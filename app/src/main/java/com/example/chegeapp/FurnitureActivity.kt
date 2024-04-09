@@ -29,6 +29,7 @@ import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
@@ -109,14 +110,14 @@ fun Furniture(){
         ) {
             Text(
                 text = "Chairs",
-                fontSize = 30.sp,
+                fontSize = 35.sp,
                 fontWeight = FontWeight.Bold,
                 fontStyle = FontStyle.Normal,
             )
             Spacer(modifier = Modifier.width(10.dp))
             Text(
                 text = "Tables",
-                fontSize = 25.sp,
+                fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
                 fontStyle = FontStyle.Normal,
                 color = Color.Gray,
@@ -125,7 +126,7 @@ fun Furniture(){
             Spacer(modifier = Modifier.width(10.dp))
             Text(
                 text = "Sofa",
-                fontSize = 25.sp,
+                fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
                 fontStyle = FontStyle.Normal,
                 color = Color.Gray,
@@ -134,7 +135,7 @@ fun Furniture(){
             Spacer(modifier = Modifier.width(10.dp))
             Text(
                 text = "Beddings",
-                fontSize = 25.sp,
+                fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
                 fontStyle = FontStyle.Normal,
                 color = Color.Gray,
@@ -143,7 +144,7 @@ fun Furniture(){
             Spacer(modifier = Modifier.width(10.dp))
             Text(
                 text = "Utensils",
-                fontSize = 25.sp,
+                fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
                 fontStyle = FontStyle.Normal,
                 color = Color.Gray,
@@ -162,11 +163,12 @@ fun Furniture(){
                 fontFamily = FontFamily.Default,
                 color = Color.Black
                 )
-            Spacer(modifier = Modifier.width(205.dp))
             Text(
                 text = "Popular",
                 fontWeight = FontWeight.Bold,
-                fontSize = 20.sp
+                fontSize = 20.sp,
+                textAlign = TextAlign.End,
+                modifier = Modifier.fillMaxWidth()
                 )
                 Icon(imageVector = Icons.Default.KeyboardArrowDown,
                     contentDescription = "Favourite",
@@ -178,7 +180,7 @@ fun Furniture(){
         Column (
             modifier = Modifier
                 .verticalScroll(rememberScrollState())
-                .padding(10.dp)
+                .padding(20.dp)
         ){
             //First row
             Row {
@@ -623,6 +625,16 @@ fun Furniture(){
                 // End of column
             }
             //end of fourth column
+            OutlinedButton(onClick = {
+                mContext.startActivity(
+                    Intent(
+                        mContext,
+                        PatientsActivity::class.java
+                    )
+                )
+            }) {
+                Text(text = "Patients Screen")
+            }
         }
     }
 }

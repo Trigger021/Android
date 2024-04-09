@@ -14,4 +14,6 @@
     <string name="title_activity_third">ThirdActivity</string>
     <string name="title_activity_furniture">FurnitureActivity</string>
     <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_patients">PatientsActivity</string>
+    <string name="title_activity_details_acticity">DetailsActicity</string>
 </resources>
